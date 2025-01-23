@@ -1,0 +1,62 @@
+name: Build and Deploy WebGL
+
+on:
+  pull_request:
+    branches:
+      - builds
+
+jobs:
+  build:
+    name: Build WebGL
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    # Step 2: Cache Unity files to speed up build
+    - name: Cache Unity Build Artifacts
+      uses: actions/cache@v3
+      with:
+        path: Library
+        key: Library-${{ runner.os }}-${{ github.sha }}
+        restore-keys: |
+          Library-${{ runner.os }}-
+
+    # Step 3: Setup Unity environment
+    - name: Setup Unity
+      uses: game-ci/unity-builder@v2
+      with:
+        unityVersion: '2023.6.0f1'
+        targetPlatform: WebGL
+        customImage: ghcr.io/game-ci/unity-builder:2023.6.0f1
+
+    # Step 4: Activate Unity License
+    - name: Activate Unity License
+      env:
+        UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+        UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+      run: |
+        unity-builder activate-license --email "$UNITY_EMAIL" --password "$UNITY_PASSWORD" --serial "$UNITY_SERIAL"
+
+    # Step 5: Build WebGL
+    - name: Build WebGL
+      run: unity-builder build --platform WebGL
+
+    # Step 6: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}
+        publish_dir: ./Build/WebGL
+
+  cleanup:
+    name: Cleanup License
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+    - name: Return Unity License
+      run: unity-builder return-license
