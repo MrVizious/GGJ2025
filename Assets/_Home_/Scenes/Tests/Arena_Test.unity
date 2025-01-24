@@ -149,10 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45646c84f5442e846a599c939e62f2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityData: {fileID: 11400000, guid: 215fd16b030e40047bdf42ec2279131b, type: 2}
   canBeActivated: 1
   onCooldownEnded:
     _PersistentCalls: []
+  data: {fileID: 11400000, guid: 215fd16b030e40047bdf42ec2279131b, type: 2}
 --- !u!4 &823772997
 Transform:
   m_ObjectHideFlags: 0
@@ -180,15 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8dc70452bb1a7449eca7075ca71840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   targetTransform: {fileID: 0}
   abilityStartTransform: {fileID: 0}
 --- !u!1 &835300986

@@ -1003,6 +1003,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Cheeto",
+                    "type": "Button",
+                    "id": "c8b2549c-934a-4170-b396-f191f0ee82c2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1014,6 +1023,28 @@
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Dice",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "60ee1119-2a80-48c7-92c4-3002c9ad64db",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Cheeto",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e9ca91d7-eda6-4768-b151-7055a5fb1433",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Cheeto",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -12,14 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77850aba232677d46bb9a285342bbc39, type: 3}
   m_Name: KunaiAbilityData
   m_EditorClassIdentifier: 
-  action:
-    m_Name: Action
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5198c0cc-6150-4296-a1cb-f421a6530100
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  action: {fileID: -7159362472636078108, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 5
   projectileSpeed: 3
