@@ -29,11 +29,12 @@ public abstract class Ability : MonoBehaviour
     public float cooldownCompletionPercentage => Mathf.Clamp01(secondsSinceActivation / abilityData.secondsOfCooldown);
 
     [Button(DrawResult = false)]
-    public virtual async UniTask Activate()
+    public virtual async UniTask<bool> Activate()
     {
-        if (!canBeActivated) return;
+        if (!canBeActivated) return false;
         canBeActivated = false;
         secondsSinceActivation = 0;
+        return true;
     }
 
     [Button(DrawResult = false)]

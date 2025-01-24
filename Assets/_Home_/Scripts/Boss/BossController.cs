@@ -12,12 +12,12 @@ public class BossController : MonoBehaviour
 
     [ReadOnly]
     [ShowInInspector]
-    private Dictionary<InputActionReference, Ability> _abilityActions;
-    public Dictionary<InputActionReference, Ability> abilityActions
+    private Dictionary<InputAction, Ability> _abilityActions;
+    public Dictionary<InputAction, Ability> abilityActions
     {
         get
         {
-            if (_abilityActions == null || _abilityActions.Count <= 0) _abilityActions = new Dictionary<InputActionReference, Ability>();
+            if (_abilityActions == null || _abilityActions.Count <= 0) FillInputActionAbilityDictionary();
             return _abilityActions;
         }
         private set
@@ -29,10 +29,10 @@ public class BossController : MonoBehaviour
     [Button]
     private void FillInputActionAbilityDictionary()
     {
-        foreach (Ability ability in GetComponents<Ability>())
+        _abilityActions = new Dictionary<InputAction, Ability>();
+        foreach (Ability ability in GetComponentsInChildren<Ability>())
         {
-            Debug.Log($"Ability found {ability.abilityData.action}", this);
-            abilityActions.Add(ability.abilityData.action, ability);
+            _abilityActions.Add(ability.abilityData.actionReference.action, ability);
         }
     }
 }

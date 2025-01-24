@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4686687bf537035459c255c04a7cf49c, type: 3}
   m_Name: CheetoAbilityData
   m_EditorClassIdentifier: 
-  action: {fileID: 0}
+  actionReference: {fileID: -2968640334631391785, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 5
   projectileSpeed: 3

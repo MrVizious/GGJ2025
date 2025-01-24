@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77850aba232677d46bb9a285342bbc39, type: 3}
   m_Name: KunaiAbilityData
   m_EditorClassIdentifier: 
-  action: {fileID: -7159362472636078108, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  actionReference: {fileID: -9165289804736320397, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 5
   projectileSpeed: 3

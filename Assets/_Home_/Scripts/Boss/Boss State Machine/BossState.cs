@@ -1,10 +1,11 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public abstract class BossState : MonoBehaviourState<BossState>
 {
-    public abstract void ProcessInputEvent(InputAction.CallbackContext inputEvent);
+    public virtual async UniTask ProcessInputEvent(InputAction.CallbackContext inputEvent) { }
     private BossController _bossController;
-    private BossController bossController
+    protected BossController bossController
     {
         get
         {
