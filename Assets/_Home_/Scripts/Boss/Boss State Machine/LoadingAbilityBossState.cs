@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class LoadingAbilityBossState : BossState
 {
-    public Ability<AbilityData> ability;
+    public Ability ability;
 
     public override void ProcessInputEvent(InputAction.CallbackContext inputEvent)
     {

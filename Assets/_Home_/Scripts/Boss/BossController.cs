@@ -5,20 +5,19 @@ using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BossController : Singleton<BossController>
+public class BossController : MonoBehaviour
 {
-    protected override bool dontDestroyOnLoad => false;
     public Transform targetTransform;
     public Transform abilityStartTransform;
 
     [ReadOnly]
     [ShowInInspector]
-    private Dictionary<InputAction, Ability<AbilityData>> _abilityActions;
-    public Dictionary<InputAction, Ability<AbilityData>> abilityActions
+    private Dictionary<InputActionReference, Ability> _abilityActions;
+    public Dictionary<InputActionReference, Ability> abilityActions
     {
         get
         {
-            if (_abilityActions == null || _abilityActions.Count <= 0) _abilityActions = new Dictionary<InputAction, Ability<AbilityData>>();
+            if (_abilityActions == null || _abilityActions.Count <= 0) _abilityActions = new Dictionary<InputActionReference, Ability>();
             return _abilityActions;
         }
         private set
@@ -30,13 +29,10 @@ public class BossController : Singleton<BossController>
     [Button]
     private void FillInputActionAbilityDictionary()
     {
-        abilityActions = new Dictionary<InputAction, Ability<AbilityData>>();
-        foreach (Ability<AbilityData> ability in GetComponents<Ability<AbilityData>>())
+        foreach (Ability ability in GetComponents<Ability>())
         {
+            Debug.Log($"Ability found {ability.abilityData.action}", this);
             abilityActions.Add(ability.abilityData.action, ability);
         }
     }
-
-
-
 }

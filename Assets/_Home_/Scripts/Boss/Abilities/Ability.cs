@@ -4,9 +4,9 @@ using Sirenix.Serialization;
 using UltEvents;
 using UnityEngine;
 
-public abstract class Ability<T> : MonoBehaviour where T : AbilityData
+public abstract class Ability : MonoBehaviour
 {
-    public T abilityData;
+    public abstract AbilityData abilityData { get; }
     public bool canBeActivated = true;
     private float _secondsSinceActivation;
     public float secondsSinceActivation
@@ -26,9 +26,6 @@ public abstract class Ability<T> : MonoBehaviour where T : AbilityData
         }
     }
     public UltEvent onCooldownEnded = new UltEvent();
-    [ReadOnly]
-    [ShowInInspector]
-    [Range(0f, 1f)]
     public float cooldownCompletionPercentage => Mathf.Clamp01(secondsSinceActivation / abilityData.secondsOfCooldown);
 
     [Button(DrawResult = false)]
