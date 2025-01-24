@@ -128,8 +128,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 823772997}
-  - component: {fileID: 823772996}
   - component: {fileID: 823772998}
+  - component: {fileID: 823772996}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
