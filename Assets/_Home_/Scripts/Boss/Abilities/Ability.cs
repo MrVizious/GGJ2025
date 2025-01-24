@@ -48,4 +48,6 @@ public abstract class Ability : MonoBehaviour
         if (canBeActivated) return;
         secondsSinceActivation += Time.deltaTime;
     }
+
+    public virtual void ChargeAbilityUpdate() { }
 }
