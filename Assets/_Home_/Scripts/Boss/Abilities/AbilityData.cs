@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "AbilityData", menuName = "Scriptable Objects/AbilityData")]
-public class AbilityData : ScriptableObject
+public abstract class AbilityData : ScriptableObject
 {
-    
+    public float secondsOfCooldown = 5f;
 }

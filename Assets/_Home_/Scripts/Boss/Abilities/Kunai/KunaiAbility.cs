@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class KunaiAbility
+public class KunaiAbility : Ability<KunaiAbilityData>
 {
-    
+
 }
