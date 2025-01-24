@@ -1,0 +1,133 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UltEvents;
+using Cysharp.Threading.Tasks;
+using ExtensionMethods;
+using DesignPatterns;
+using Sirenix.OdinInspector;
+
+namespace Audio
+{
+
+    [RequireComponent(typeof(AudioSource))]
+    public class AudioSourceExtended : Poolable
+    {
+        public AudioSource audioSource { get; private set; }
+        public UltEvent onEndedPlaying;
+
+        private float targetVolume, secondsToFadeOut;
+        private bool fadingIn;
+
+        private void Awake()
+        {
+            audioSource = gameObject.GetOrAddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+            if (onEndedPlaying == null)
+            {
+                onEndedPlaying = new UltEvent();
+            }
+        }
+
+        public AudioSourceExtended Play(AudioClip clip, float volume, bool loop = false, float minPitchRange = 1f, float maxPitchRange = 1f, float secondsToFadeIn = 0f, float secondsToFadeOut = 0f)
+        {
+            // If the audio source is already in use, skip it
+            if (audioSource.isPlaying) return null;
+
+            targetVolume = volume;
+
+            FadeIn(secondsToFadeIn).Forget();
+
+            this.secondsToFadeOut = secondsToFadeOut;
+            audioSource.loop = loop;
+
+            audioSource.clip = clip;
+            audioSource.pitch = Random.Range(minPitchRange, maxPitchRange);
+            audioSource.Play();
+
+            if (!loop)
+            {
+                ReleaseOnPlayingEnd();
+            }
+
+            return this;
+        }
+
+        [Button]
+        public async void Stop()
+        {
+            await FadeOut(secondsToFadeOut);
+            Release();
+        }
+
+        [Button]
+        public void StopImmediately()
+        {
+            Release();
+        }
+
+        public void SetVolume(float volume)
+        {
+            volume = Mathf.Clamp01(volume);
+            float ratio = volume / audioSource.volume;
+            audioSource.volume = volume;
+            targetVolume *= ratio;
+            targetVolume = Mathf.Clamp01(targetVolume);
+        }
+
+        private async UniTask ListenForPlayingEnd()
+        {
+            await UniTask.WaitUntil(() => audioSource?.isPlaying == false);
+            onEndedPlaying?.Invoke();
+        }
+
+        private async void ReleaseOnPlayingEnd()
+        {
+            await ListenForPlayingEnd();
+            Release();
+        }
+
+        public override void OnPoolRelease()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public override void OnPoolGet()
+        {
+            gameObject.SetActive(true);
+        }
+
+        private async UniTaskVoid FadeIn(float secondsToFade)
+        {
+            fadingIn = true;
+            if (secondsToFade <= 0f)
+            {
+                audioSource.volume = targetVolume;
+                return;
+            }
+            audioSource.volume = 0f;
+            float step = targetVolume / secondsToFade;
+            while (audioSource.volume < targetVolume)
+            {
+                if (!fadingIn) return;
+                audioSource.volume += step * Time.deltaTime;
+                await UniTask.Yield();
+            }
+            audioSource.volume = targetVolume;
+        }
+
+        private async UniTask FadeOut(float secondsToFade)
+        {
+            if (fadingIn) fadingIn = false;
+            float step = audioSource.volume / secondsToFade;
+            while (audioSource.volume > 0f)
+            {
+                audioSource.volume -= step * Time.deltaTime;
+                await UniTask.Yield();
+            }
+            audioSource.volume = 0f;
+            audioSource.Stop();
+        }
+    }
+
+}
