@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823772997}
   - component: {fileID: 823772996}
+  - component: {fileID: 823772998}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45646c84f5442e846a599c939e62f2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityData: {fileID: 0}
+  abilityData: {fileID: 11400000, guid: 215fd16b030e40047bdf42ec2279131b, type: 2}
   canBeActivated: 1
   onCooldownEnded:
     _PersistentCalls: []
@@ -167,6 +168,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823772998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823772995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8dc70452bb1a7449eca7075ca71840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  targetTransform: {fileID: 0}
+  abilityStartTransform: {fileID: 0}
 --- !u!1 &835300986
 GameObject:
   m_ObjectHideFlags: 0
