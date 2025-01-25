@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MultiplayerController : Singleton<MultiplayerController>
 {
+    protected override bool keepOldestInstance => true;
     protected override bool dontDestroyOnLoad => true;
     public PlayerInputHolder[] playerInputHolders = new PlayerInputHolder[4];
     public UnityEvent<PlayerInputHolder> onPlayerJoined = new UnityEvent<PlayerInputHolder>();
