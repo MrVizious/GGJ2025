@@ -6,8 +6,26 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_Home_/Scenes/finalScenes/MainMenuScene.unity
+    guid: 06a618818a548df46a68964686c468a4
+  - enabled: 1
+    path: Assets/_Home_/Scenes/finalScenes/PlayerSelector.unity
+    guid: ff3126d4b9a111a4db9ec7480ece8d0a
+  - enabled: 1
+    path: Assets/_Home_/Scenes/finalScenes/LooseScene.unity
+    guid: 73db36688f3c67d4fab50eaef14fe27c
+  - enabled: 1
+    path: Assets/_Home_/Scenes/finalScenes/GamepleyScene.unity
+    guid: 82e6f0b407416bf468fc91ae68fa02ca
+  - enabled: 1
+    path: Assets/_Home_/Scenes/finalScenes/CreditScene.unity
+    guid: 7e951e553c3b3c74fa4fcb6b5944166f
+  - enabled: 1
+    path: Assets/_Home_/Scenes/finalScenes/CensorScene.unity
+    guid: 1570e8c7ed974d549a037acb830f75e0
+  - enabled: 1
+    path: Assets/_Home_/Scenes/finalScenes/BurbujasScene.unity
+    guid: 5eadc23d58ef606489ece9e73809b495
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
