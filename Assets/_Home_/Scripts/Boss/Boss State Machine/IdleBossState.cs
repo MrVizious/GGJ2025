@@ -16,4 +16,9 @@ public class IdleBossState : BossState
         }
     }
 
+    public override void UpdateExecution()
+    {
+        base.UpdateExecution();
+        bossController.targetTransform.position = bossController.abilityStartTransform.position;
+    }
 }

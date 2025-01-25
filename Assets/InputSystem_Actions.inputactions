@@ -1120,6 +1120,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "New Player",
+            "id": "6d32241d-63e9-4ad3-a4ff-a027bd4d04f9",
+            "actions": [
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "e9ca3b1d-fcf5-43e4-a211-4a61dda1c296",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6b995eb4-e891-474a-b98a-0fc8cfcbeca2",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
