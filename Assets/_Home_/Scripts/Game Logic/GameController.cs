@@ -29,7 +29,6 @@ public class GameController : Singleton<GameController>
     private void Start()
     {
         PreparePlayerInputs();
-        PrepareGameData();
     }
 
     private void PreparePlayerInputs()
@@ -43,19 +42,6 @@ public class GameController : Singleton<GameController>
             else if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Bubble)
             {
                 PrepareBubblePlayer(playerInputHolder.playerInput);
-            }
-        }
-    }
-
-    private async void PrepareGameData()
-    {
-        PlayerInputHolder[] playerInputHolders = (await MultiplayerController.GetInstance()).playerInputHolders;
-        foreach (PlayerInputHolder playerInputHolder in playerInputHolders)
-        {
-            if (playerInputHolder == null || playerInputHolder.playerInput == null) continue;
-            if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Boss)
-            {
-                SubscribeToBossActions(playerInputHolder.playerInput);
             }
         }
     }
