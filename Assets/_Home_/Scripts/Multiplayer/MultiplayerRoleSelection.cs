@@ -43,7 +43,7 @@ public class MultiplayerRoleSelection : MonoBehaviour
         {
             if (bossPlayer == null)
             {
-                playerInputHolder.playerRole = newRole;
+                playerInputHolder.playerRole.value = newRole;
                 bossPlayer = playerInputHolder;
                 return true;
             }
@@ -53,7 +53,7 @@ public class MultiplayerRoleSelection : MonoBehaviour
         {
             bossPlayer = null;
         }
-        playerInputHolder.playerRole = newRole;
+        playerInputHolder.playerRole.value = newRole;
         return true;
     }
 }
