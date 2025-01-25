@@ -42,7 +42,7 @@ public class GameController : Singleton<GameController>
             }
             else if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Bubble)
             {
-
+                PrepareBubblePlayer(playerInputHolder.playerInput);
             }
         }
     }
@@ -64,11 +64,11 @@ public class GameController : Singleton<GameController>
     {
         // Access the Gameplay action map
         playerInput.SwitchCurrentActionMap("Bubble");
-        InputActionMap bossActionMap = playerInput.actions.FindActionMap("Bubble");
+        InputActionMap bubbleActionMap = playerInput.actions.FindActionMap("Bubble");
 
 
 
-        if (bossActionMap == null)
+        if (bubbleActionMap == null)
         {
             Debug.LogError("Gameplay action map not found!");
             return;
@@ -77,11 +77,10 @@ public class GameController : Singleton<GameController>
         PlayerMovement newPlayer = Instantiate(playerPrefab);
 
         // Subscribe to specific actions
-        BossMovement bossMovement = bossController.GetComponent<BossMovement>();
-        bossActionMap["Move"].performed += newPlayer.UpdateMoveVector;
-        bossActionMap["Move"].canceled += newPlayer.UpdateMoveVector;
+        bubbleActionMap["Move"].performed += newPlayer.UpdateMoveVector;
+        bubbleActionMap["Move"].canceled += newPlayer.UpdateMoveVector;
 
-        bossActionMap["Dash"].performed += newPlayer.Dash;
+        bubbleActionMap["Dash"].performed += newPlayer.Dash;
     }
     private void SubscribeToBossActions(PlayerInput playerInput)
     {
