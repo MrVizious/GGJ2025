@@ -1057,11 +1057,11 @@
                 },
                 {
                     "name": "",
-                    "id": "5927701c-e4b5-4f02-bcc2-23fdaaa770a1",
-                    "path": "<Mouse>/rightButton",
+                    "id": "2ef5defd-1945-44a5-8cf7-65b6eb4d22a3",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": ";Gamepad",
                     "action": "Cheeto",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1070,17 +1070,6 @@
                     "name": "",
                     "id": "4893d21a-242c-4bf3-8935-555c519d2042",
                     "path": "<Gamepad>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Kunai",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "60ee1119-2a80-48c7-92c4-3002c9ad64db",
-                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",

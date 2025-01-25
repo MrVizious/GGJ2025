@@ -6,7 +6,7 @@ public class BossStateMachine : MonoBehaviourStateMachine<BossState>
 {
     private void Start()
     {
-        ChangeToState(typeof(MoveBossState));
+        ChangeToState(typeof(IdleBossState));
     }
     public void ProcessInputEvent(InputAction.CallbackContext inputEvent)
     {
