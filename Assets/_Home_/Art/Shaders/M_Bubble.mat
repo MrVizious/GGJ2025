@@ -37,6 +37,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_153f327d26f04cbc891bdd55a34324e6_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 8f88e3ff35aabbf40852f8576034ac0c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ba848d701dab4fc0a32f0f27d2dc3353_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 4820d526fbf857443906d0a6dbf89792, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_df2c5ac2aa7640109d277a04965b7183_Texture_1_Texture2D:
         m_Texture: {fileID: 2800000, guid: e434a2c524429464daf10be6ecbc3205, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -59,15 +67,27 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Bubble_Color_Noise_Tile: 0.03
+    - _Bubble_Color_Noise_Tile: 0.05
+    - _Emmisive_Contrast_Intensity: 1.84
     - _Emmisive_Fresnel_Contrast: 1
-    - _Emmisive_Fresnel_Power: 2.79
-    - _Emmisive_Intensity: 1.1
-    - _Noise_Time_Multiplier: 0.71
-    - _Opacity_Fresnel_Power: 0.89
+    - _Emmisive_Fresnel_Power: 1.4
+    - _Emmisive_Intensity: 0.26
+    - _Face_Emmisive_Intensity: 18.5
+    - _Noise_Position_Multiplier: 0.003
+    - _Noise_Time_Multiplier: 0.5
+    - _Normal_Contrast_Intensity: 0.35
+    - _Opacity_Contrast_Intensity: 1
+    - _Opacity_Fresnel_Power: 5.66
+    - _Outline_Contrast_Intensity: 4
+    - _Outline_Fresnel_Power: 4.3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Scroll_Noise_Tile: 1
-    m_Colors: []
+    - _Time_Position_Multiplier: 0.01
+    m_Colors:
+    - _Face_Color: {r: 0, g: 1, b: 0.11874509, a: 0}
+    - _Face_Offset: {r: 1, g: 1, b: 0, a: 0}
+    - _Face_Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Player_Color: {r: 0.8970251, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
