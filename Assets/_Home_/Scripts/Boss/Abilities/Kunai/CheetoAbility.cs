@@ -24,6 +24,6 @@ public class CheetoAbility : Ability
     {
         base.ChargeAbilityUpdate(bossController);
         bossController.targetTransform.position = bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
-        bossController.targetTransform.position += Vector3.right * targetMoveSpeed * Time.deltaTime;
+        bossController.targetTransform.position -= Vector3.right * targetMoveSpeed * Time.deltaTime;
     }
 }

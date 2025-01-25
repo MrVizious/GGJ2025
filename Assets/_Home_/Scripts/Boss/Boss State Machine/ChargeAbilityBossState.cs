@@ -24,6 +24,7 @@ public class ChargeAbilityBossState : AbilityBossState
     private void Update()
     {
         if (ability == null) return;
+        if (!ability.canBeActivated) return;
         ability.ChargeAbilityUpdate(bossController);
     }
 }
