@@ -35,6 +35,7 @@ public class GameController : Singleton<GameController>
     {
         foreach (PlayerInputHolder playerInputHolder in multiplayerController.playerInputHolders)
         {
+            if (playerInputHolder == null) continue;
             if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Boss)
             {
                 SubscribeToBossActions(playerInputHolder.playerInput);
