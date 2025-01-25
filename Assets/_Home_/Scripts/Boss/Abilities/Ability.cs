@@ -49,5 +49,5 @@ public abstract class Ability : MonoBehaviour
         secondsSinceActivation += Time.deltaTime;
     }
 
-    public virtual void ChargeAbilityUpdate() { }
+    public virtual void ChargeAbilityUpdate(BossController bossController) { }
 }

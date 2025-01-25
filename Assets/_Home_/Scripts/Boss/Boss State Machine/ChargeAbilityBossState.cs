@@ -16,9 +16,14 @@ public class ChargeAbilityBossState : AbilityBossState
         }
     }
 
+    public override void Enter(IStateMachine<BossState> newStateMachine)
+    {
+        base.Enter(newStateMachine);
+        bossController.targetTransform.position = bossController.abilityStartTransform.position;
+    }
     private void Update()
     {
         if (ability == null) return;
-        ability.ChargeAbilityUpdate();
+        ability.ChargeAbilityUpdate(bossController);
     }
 }
