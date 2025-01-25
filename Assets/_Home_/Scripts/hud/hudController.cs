@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class hud_controller : MonoBehaviour
+public class hudController : MonoBehaviour
 {
     [SerializeField] TMP_Text lifeTxt;
     [SerializeField] TMP_Text timeTxt;
