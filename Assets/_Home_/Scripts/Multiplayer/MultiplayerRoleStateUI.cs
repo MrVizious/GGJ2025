@@ -30,7 +30,6 @@ public class MultiplayerRoleStateUI : MonoBehaviour
 
     private void SubscribeToUIActions()
     {
-        Debug.Log($"Subscribing to new input", this);
         if (playerInputHolder.value == null) return;
         PlayerInput playerInput = playerInputHolder.value.playerInput;
         // Access the Gameplay action map
