@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputHolder : MonoBehaviour
 {
     private PlayerInput _playerInput;
-    private PlayerInput playerInput
+    public PlayerInput playerInput
     {
         get
         {
@@ -19,6 +19,7 @@ public class PlayerInputHolder : MonoBehaviour
         Boss,
         Bubble
     }
+    public PlayerRole playerRole;
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

@@ -1,48 +1,40 @@
 using DesignPatterns;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class MultiplayerController : Singleton<MultiplayerController>
 {
     protected override bool dontDestroyOnLoad => true;
-    [SerializeField]
-    PlayerInput[] playerInputs = new PlayerInput[4];
-    [SerializeField]
-    Image[] images = new Image[4];
-    private void Start()
-    {
-        foreach (Image image in images)
-        {
-            if (image == null) continue;
-            image.enabled = false;
-        }
-    }
+    public PlayerInputHolder[] playerInputHolders = new PlayerInputHolder[4];
+    public UnityEvent<PlayerInputHolder> onPlayerJoined = new UnityEvent<PlayerInputHolder>();
+    public UnityEvent<PlayerInputHolder> onPlayerLeft = new UnityEvent<PlayerInputHolder>();
     public void OnPlayerJoined(PlayerInput newPlayerInput)
     {
-        for (int i = 0; i < playerInputs.Length; i++)
+        for (int i = 0; i < playerInputHolders.Length; i++)
         {
-            if (playerInputs[i] == null)
+            if (playerInputHolders[i] == null)
             {
-                playerInputs[i] = newPlayerInput;
-                images[i].enabled = true;
-                Debug.Log($"Added player Input {newPlayerInput}", this);
+
+                playerInputHolders[i] = newPlayerInput.GetComponent<PlayerInputHolder>();
+                onPlayerJoined.Invoke(playerInputHolders[i]);
                 return;
             }
         }
     }
     public void OnPlayerLeft(PlayerInput leftPlayerInput)
     {
-        Debug.Log($"Player Input has left: {leftPlayerInput}", this);
-        for (int i = 0; i < playerInputs.Length; i++)
+        PlayerInputHolder playerInputHolder = leftPlayerInput.GetComponent<PlayerInputHolder>();
+        for (int i = 0; i < playerInputHolders.Length; i++)
         {
-            if (playerInputs[i] == leftPlayerInput)
+            if (playerInputHolders[i] == playerInputHolder)
             {
-                playerInputs[i] = null;
-                images[i].enabled = false;
+                playerInputHolders[i] = null;
                 if (leftPlayerInput.gameObject != null)
                 {
-                    Destroy(leftPlayerInput.gameObject);
+                    onPlayerLeft.Invoke(playerInputHolder);
+                    Destroy(playerInputHolder.gameObject);
                 }
                 return;
             }
