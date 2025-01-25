@@ -1,9 +1,11 @@
+using EventfulData;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerInputHolder : MonoBehaviour
 {
+
     private PlayerInput _playerInput;
     public PlayerInput playerInput
     {
@@ -13,13 +15,7 @@ public class PlayerInputHolder : MonoBehaviour
             return _playerInput;
         }
     }
-    public enum PlayerRole
-    {
-        None,
-        Boss,
-        Bubble
-    }
-    public PlayerRole playerRole;
+    public EventfulStruct<PlayerRole> playerRole = new EventfulStruct<PlayerRole>(PlayerRole.None);
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -31,5 +27,11 @@ public class PlayerInputHolder : MonoBehaviour
         (await MultiplayerController.GetInstance()).OnPlayerLeft(playerInput);
     }
 
+    public enum PlayerRole
+    {
+        None,
+        Boss,
+        Bubble
+    }
 
 }
