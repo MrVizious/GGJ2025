@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveValue;
     public float cameraShakeDuration = 0.5f;
     public float cameraShakeStrength = 3f;
-    public float moveSpeed = 20f;
+    public float moveSpeed = 10000f;
+    private float originalSpeed;
     public float dashSpeed = 10f;
     public float dashCooldown = 2f;
     private Vector3 originalScale;
@@ -33,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         originalScale = transform.localScale;
-        dashEffect.enabled = false;
+        dashEffect.SetActive(false);
+        originalSpeed = moveSpeed;
     }
 
     public void UpdateMoveVector(InputAction.CallbackContext inputContext)
@@ -80,6 +82,16 @@ public class PlayerMovement : MonoBehaviour
         Destroy(newDeathEffectGO, 1f);
         (await GameController.GetInstance()).RespawnPlayer(this);
         ShakeCamera();
+    }
+
+    public async void SlowOn()
+    {
+        moveSpeed = originalSpeed * 0.1f;
+    }
+
+    public async void SlowOff()
+    {
+        moveSpeed = originalSpeed;
     }
 
     [Button]
