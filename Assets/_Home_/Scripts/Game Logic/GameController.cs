@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class GameController : Singleton<GameController>
 {
     protected override bool dontDestroyOnLoad => false;
+    public Transform playerSpawnTransform;
     private BossController _bossController;
     private BossController bossController
     {
@@ -46,7 +47,12 @@ public class GameController : Singleton<GameController>
             }
         }
     }
-
+    public void RespawnPlayer(PlayerMovement player)
+    {
+        player.rb.linearVelocity = Vector3.zero;
+        player.transform.position = playerSpawnTransform.position;
+        player.transform.rotation = playerSpawnTransform.rotation;
+    }
     private void PrepareBubblePlayer(PlayerInput playerInput)
     {
         // Access the Gameplay action map
@@ -68,6 +74,8 @@ public class GameController : Singleton<GameController>
         bubbleActionMap["Move"].canceled += newPlayer.UpdateMoveVector;
 
         bubbleActionMap["Dash"].performed += newPlayer.Dash;
+
+        RespawnPlayer(newPlayer);
     }
     private void SubscribeToBossActions(PlayerInput playerInput)
     {
