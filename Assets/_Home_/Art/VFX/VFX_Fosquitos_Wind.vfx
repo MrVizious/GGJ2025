@@ -34,9 +34,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 851
-    y: -1433
-    width: 476
+    x: 852
+    y: -1434
+    width: 475
     height: 2325
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -2499,7 +2499,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.4968552589416504,"g":0.14404627680778504,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.8364779949188232,"g":0.14737209677696229,"b":0.0,"a":1.0},"time":0.2568703889846802}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.26274511218070986},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.4968552589416504,"g":0.14404627680778504,"b":0.0,"a":1.0},"time":0.0},{"color":{"r":0.8364779949188232,"g":0.14737209677696229,"b":0.0,"a":1.0},"time":0.2568703889846802}],"alphaKeys":[{"alpha":1.0,"time":0.0},{"alpha":1.0,"time":0.6882429122924805},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: -1
   m_Property:
     name: Color
@@ -2762,7 +2762,7 @@ MonoBehaviour:
   m_OutputSlots: []
   m_Disabled: 0
   m_ActivationSlot: {fileID: 8926484042661614910}
-  mode: 6
+  mode: 0
   axes: 4
   faceRay: 1
 --- !u!114 &8926484042661614910
