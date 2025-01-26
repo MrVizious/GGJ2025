@@ -302,7 +302,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -6.625}
-  m_SizeDelta: {x: 150, y: 100}
+  m_SizeDelta: {x: 275, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &249123950
 GameObject:
@@ -412,7 +412,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -6.625}
-  m_SizeDelta: {x: 150, y: 100}
+  m_SizeDelta: {x: 275, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &364239349
 GameObject:
@@ -482,7 +482,7 @@ MonoBehaviour:
   nonePosition: {fileID: 249123951}
   bubblePosition: {fileID: 807892888}
   image: {fileID: 191262080}
-  pressStartSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  pressStartSprite: {fileID: 21300000, guid: 2e7072409f20c844e89c903a1fabd0ce, type: 3}
   controllerSprite: {fileID: 21300000, guid: f94cd3dcf15519040baf3d7545ed82bd, type: 3}
   color: {r: 0.4475317, g: 1, b: 0, a: 1}
   playerInputHolder:
@@ -639,7 +639,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -6.625}
-  m_SizeDelta: {x: 150, y: 100}
+  m_SizeDelta: {x: 275, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &584424622
 GameObject:
@@ -969,7 +969,7 @@ MonoBehaviour:
   nonePosition: {fileID: 1124263500}
   bubblePosition: {fileID: 111920147}
   image: {fileID: 480441372}
-  pressStartSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  pressStartSprite: {fileID: 21300000, guid: 2e7072409f20c844e89c903a1fabd0ce, type: 3}
   controllerSprite: {fileID: 21300000, guid: f94cd3dcf15519040baf3d7545ed82bd, type: 3}
   color: {r: 1, g: 0.989954, b: 0, a: 1}
   playerInputHolder:
@@ -1490,7 +1490,7 @@ MonoBehaviour:
   nonePosition: {fileID: 1534119302}
   bubblePosition: {fileID: 1431178095}
   image: {fileID: 292570891}
-  pressStartSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  pressStartSprite: {fileID: 21300000, guid: 2e7072409f20c844e89c903a1fabd0ce, type: 3}
   controllerSprite: {fileID: 21300000, guid: f94cd3dcf15519040baf3d7545ed82bd, type: 3}
   color: {r: 1, g: 0, b: 0, a: 1}
   playerInputHolder:
@@ -1554,7 +1554,7 @@ MonoBehaviour:
   nonePosition: {fileID: 364239350}
   bubblePosition: {fileID: 971777968}
   image: {fileID: 1829283068}
-  pressStartSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  pressStartSprite: {fileID: 21300000, guid: 2e7072409f20c844e89c903a1fabd0ce, type: 3}
   controllerSprite: {fileID: 21300000, guid: f94cd3dcf15519040baf3d7545ed82bd, type: 3}
   color: {r: 0.74906784, g: 0.28773582, b: 1, a: 1}
   playerInputHolder:
@@ -2132,7 +2132,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -6.625}
-  m_SizeDelta: {x: 150, y: 100}
+  m_SizeDelta: {x: 275, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2070459656
 GameObject:
