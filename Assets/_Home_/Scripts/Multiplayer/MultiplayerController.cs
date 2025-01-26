@@ -48,7 +48,7 @@ public class MultiplayerController : Singleton<MultiplayerController>
                 if (leftPlayerInput.gameObject != null)
                 {
                     onPlayerLeft.Invoke(playerInputHolder);
-                    Destroy(playerInputHolder.gameObject);
+                    Destroy(playerInputHolder?.gameObject);
                 }
                 return;
             }

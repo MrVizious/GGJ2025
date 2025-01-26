@@ -304,9 +304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShakeDuration: 0.2
   cameraShakeStrength: 1
-  moveSpeed: 10000
-  dashSpeed: 10
-  dashCooldown: 2
+  moveSpeed: 15000
+  dashSpeed: 13
+  dashCooldown: 1.5
   deathEffect: {fileID: 2831485186981069301, guid: cca3a2b6b29849a4a99803d5fa5b1a58, type: 3}
   dashEffect: {fileID: 7989248687406681617}
 --- !u!54 &6744817652144998428

@@ -16,7 +16,7 @@ public class FartAbility : Ability
     {
         if (!await base.Perform(bossController)) return false;
         GameObject newFart = Instantiate(data.fartPrefab, data.fartPrefab.transform.position, data.fartPrefab.transform.rotation);
-        Destroy(newFart, 50f);
+        Destroy(newFart, 6f);
         return true;
     }
 }
