@@ -1,12 +1,15 @@
 using DesignPatterns;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using EventfulData;
 
 public class GameController : Singleton<GameController>
 {
     protected override bool dontDestroyOnLoad => false;
     public Transform playerSpawnTransform;
     private BossController _bossController;
+    public sceneController sc;
+    public EventfulStruct<int> Lives = new EventfulStruct<int>(6);
     private BossController bossController
     {
         get
@@ -26,6 +29,16 @@ public class GameController : Singleton<GameController>
     }
 
     public PlayerMovement playerPrefab;
+
+    public void TakeDamage()
+    {
+        Lives -= 1;
+        Debug.Log(Lives);
+        if (Lives <= 0)
+        {
+            sc.GoToBurbujasScene();
+        }
+    }
 
     private void Start()
     {
