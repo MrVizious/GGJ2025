@@ -10,19 +10,13 @@ public class FartAbility : Ability
     [HideInInspector]
     public override AbilityData abilityData => data;
 
-    public override bool hasChargeMethod => true;
+    public override bool hasChargeMethod => false;
 
     public override async UniTask<bool> Perform(BossController bossController)
     {
         if (!await base.Perform(bossController)) return false;
-        GameObject newCheeto = Instantiate(data.fartPrefab, bossController.abilityStartTransform.position, data.fartPrefab.transform.rotation);
-        Destroy(newCheeto, 7f);
+        GameObject newFart = Instantiate(data.fartPrefab, data.fartPrefab.transform.position, data.fartPrefab.transform.rotation);
+        Destroy(newFart, 50f);
         return true;
-    }
-    public override void ChargeAbilityUpdate(BossController bossController)
-    {
-        base.ChargeAbilityUpdate(bossController);
-        bossController.targetTransform.position = bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
-        bossController.targetTransform.position -= Vector3.right * targetMoveSpeed * Time.deltaTime;
     }
 }

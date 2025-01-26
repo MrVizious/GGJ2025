@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionReference: {fileID: 6737485629808549303, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 40
-  fartPrefab: {fileID: 0}
+  fartPrefab: {fileID: 8036351911748779861, guid: 6abde777538056c42b39b7ddd21ab475, type: 3}

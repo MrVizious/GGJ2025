@@ -33,7 +33,6 @@ public abstract class Ability : MonoBehaviour
     public virtual async UniTask<bool> Perform(BossController bossController)
     {
         if (!canBeActivated) return false;
-        Debug.Log($"Ability performed! {GetType()}", this);
         canBeActivated = false;
         secondsSinceActivation = 0;
         return true;
