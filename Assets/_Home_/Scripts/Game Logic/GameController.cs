@@ -14,30 +14,61 @@ public class GameController : Singleton<GameController>
             return _bossController;
         }
     }
+    private MultiplayerController _multiplayerController;
+    private MultiplayerController multiplayerController
+    {
+        get
+        {
+            if (_multiplayerController == null) _multiplayerController = FindFirstObjectByType<MultiplayerController>();
+            return _multiplayerController;
+        }
+    }
+
+    public PlayerMovement playerPrefab;
+
     private void Start()
     {
-        PrepareControllerEvents();
-        PrepareGameData();
+        PreparePlayerInputs();
     }
 
-
-    private async void PrepareControllerEvents()
+    private void PreparePlayerInputs()
     {
-        (await MultiplayerController.GetInstance()).onPlayerJoined.AddListener(playerInputHolder => SubscribeToBossActions(playerInputHolder.playerInput));
-    }
-    private async void PrepareGameData()
-    {
-        PlayerInputHolder[] playerInputHolders = (await MultiplayerController.GetInstance()).playerInputHolders;
-        foreach (PlayerInputHolder playerInputHolder in playerInputHolders)
+        foreach (PlayerInputHolder playerInputHolder in multiplayerController.playerInputHolders)
         {
-            if (playerInputHolder == null || playerInputHolder.playerInput == null) continue;
+            if (playerInputHolder == null) continue;
             if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Boss)
             {
                 SubscribeToBossActions(playerInputHolder.playerInput);
             }
+            else if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Bubble)
+            {
+                PrepareBubblePlayer(playerInputHolder.playerInput);
+            }
         }
     }
 
+    private void PrepareBubblePlayer(PlayerInput playerInput)
+    {
+        // Access the Gameplay action map
+        playerInput.SwitchCurrentActionMap("Bubble");
+        InputActionMap bubbleActionMap = playerInput.actions.FindActionMap("Bubble");
+
+
+
+        if (bubbleActionMap == null)
+        {
+            Debug.LogError("Gameplay action map not found!");
+            return;
+        }
+
+        PlayerMovement newPlayer = Instantiate(playerPrefab);
+
+        // Subscribe to specific actions
+        bubbleActionMap["Move"].performed += newPlayer.UpdateMoveVector;
+        bubbleActionMap["Move"].canceled += newPlayer.UpdateMoveVector;
+
+        bubbleActionMap["Dash"].performed += newPlayer.Dash;
+    }
     private void SubscribeToBossActions(PlayerInput playerInput)
     {
         // Access the Gameplay action map
@@ -63,9 +94,5 @@ public class GameController : Singleton<GameController>
         bossActionMap["Dice"].canceled += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
         bossActionMap["Fart"].performed += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
         bossActionMap["Fart"].canceled += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
-    }
-    private void StartGame()
-    {
-
     }
 }

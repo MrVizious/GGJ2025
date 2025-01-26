@@ -30,7 +30,6 @@ public class MultiplayerRoleStateUI : MonoBehaviour
 
     private void SubscribeToUIActions()
     {
-        Debug.Log($"Subscribing to new input", this);
         if (playerInputHolder.value == null) return;
         PlayerInput playerInput = playerInputHolder.value.playerInput;
         // Access the Gameplay action map
@@ -45,13 +44,16 @@ public class MultiplayerRoleStateUI : MonoBehaviour
 
         // Subscribe to specific actions
         bossActionMap["Navigate"].performed += MoveController;
+        bossActionMap["Submit"].performed += _ => multiplayerRoleSelection.GoToGame();
     }
 
     private void OnDestroy()
     {
+        if ((PlayerInputHolder)playerInputHolder == null) return;
         PlayerInput playerInput = playerInputHolder.value.playerInput;
         InputActionMap bossActionMap = playerInput.actions.FindActionMap("UI");
         bossActionMap["Navigate"].performed -= MoveController;
+        bossActionMap["Submit"].performed -= _ => multiplayerRoleSelection.GoToGame();
     }
 
     private void MoveController(InputAction.CallbackContext context)
@@ -90,7 +92,6 @@ public class MultiplayerRoleStateUI : MonoBehaviour
     }
     private void UpdateState(PlayerInputHolder newPlayerInputHolder = null)
     {
-        Debug.Log($"Updating state", this);
         if (newPlayerInputHolder == null) newPlayerInputHolder = playerInputHolder;
         if (newPlayerInputHolder == null)
         {

@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -55,5 +57,20 @@ public class MultiplayerRoleSelection : MonoBehaviour
         }
         playerInputHolder.playerRole.value = newRole;
         return true;
+    }
+
+    public async void GoToGame()
+    {
+        if (bossPlayer != null)
+        {
+            foreach (MultiplayerRoleStateUI roleState in multiplayerRoleStateUIs)
+            {
+                if (roleState.playerInputHolder.value != null && roleState.playerInputHolder.value.playerRole == PlayerInputHolder.PlayerRole.Bubble)
+                {
+                    (await sceneController.GetInstance()).ChangeGameScene("Arena_Test");
+                    return;
+                }
+            }
+        }
     }
 }
