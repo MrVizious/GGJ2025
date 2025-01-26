@@ -8,6 +8,15 @@ public class GameController : Singleton<GameController>
 {
     protected override bool dontDestroyOnLoad => false;
     public Transform playerSpawnTransform;
+    private timerController _timer;
+    private timerController timer
+    {
+        get
+        {
+            if (_timer == null) _timer = FindFirstObjectByType<timerController>();
+            return _timer;
+        }
+    }
     private BossController _bossController;
     [SerializeField]
     private int _lives;
@@ -57,6 +66,8 @@ public class GameController : Singleton<GameController>
     {
         PreparePlayerInputs();
         lives = CalculatePlayers() * 3;
+        timer.beginTimer(5);
+        timer.onTimerEnded.AddListener(async () => (await sceneController.GetInstance()).GoToLooseScene());
     }
 
     private int CalculatePlayers()
