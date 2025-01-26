@@ -487,7 +487,7 @@ MonoBehaviour:
   controllerSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 0.4475317, g: 1, b: 0, a: 1}
   playerInputHolder:
-    debug: 1
+    debug: 0
     _value: {fileID: 0}
     onValueChanged:
       _PersistentCalls: []
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   controllerSprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   color: {r: 1, g: 0, b: 0, a: 1}
   playerInputHolder:
-    debug: 1
+    debug: 0
     _value: {fileID: 0}
     onValueChanged:
       _PersistentCalls: []

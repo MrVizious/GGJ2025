@@ -48,7 +48,7 @@ public class MultiplayerRoleStateUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (playerInputHolder == null) return;
+        if ((PlayerInputHolder)playerInputHolder == null) return;
         PlayerInput playerInput = playerInputHolder.value.playerInput;
         InputActionMap bossActionMap = playerInput.actions.FindActionMap("UI");
         bossActionMap["Navigate"].performed -= MoveController;
@@ -90,7 +90,6 @@ public class MultiplayerRoleStateUI : MonoBehaviour
     }
     private void UpdateState(PlayerInputHolder newPlayerInputHolder = null)
     {
-        Debug.Log($"Updating state", this);
         if (newPlayerInputHolder == null) newPlayerInputHolder = playerInputHolder;
         if (newPlayerInputHolder == null)
         {

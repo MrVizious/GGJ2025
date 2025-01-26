@@ -32,7 +32,6 @@ public class PlayerMovement : MonoBehaviour
     {
         moveValue = Vector3.ClampMagnitude(inputContext.ReadValue<Vector2>(), 1f);
         moveValue = Vector3.zero.With(x: moveValue.x, z: moveValue.y);
-        Debug.Log($"MoveValue: {moveValue}", this);
     }
 
     private void Update()
