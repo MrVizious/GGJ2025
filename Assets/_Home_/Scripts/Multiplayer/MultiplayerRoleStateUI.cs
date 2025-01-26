@@ -44,6 +44,7 @@ public class MultiplayerRoleStateUI : MonoBehaviour
 
         // Subscribe to specific actions
         bossActionMap["Navigate"].performed += MoveController;
+        bossActionMap["Submit"].performed += _ => multiplayerRoleSelection.GoToGame();
     }
 
     private void OnDestroy()
@@ -52,6 +53,7 @@ public class MultiplayerRoleStateUI : MonoBehaviour
         PlayerInput playerInput = playerInputHolder.value.playerInput;
         InputActionMap bossActionMap = playerInput.actions.FindActionMap("UI");
         bossActionMap["Navigate"].performed -= MoveController;
+        bossActionMap["Submit"].performed -= _ => multiplayerRoleSelection.GoToGame();
     }
 
     private void MoveController(InputAction.CallbackContext context)

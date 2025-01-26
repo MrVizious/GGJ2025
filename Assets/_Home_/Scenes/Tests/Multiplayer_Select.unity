@@ -773,10 +773,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2134097113}
-        m_TargetAssemblyTypeName: sceneController, Assembly-CSharp
-        m_MethodName: ChangeGameScene
-        m_Mode: 5
+      - m_Target: {fileID: 593796367}
+        m_TargetAssemblyTypeName: MultiplayerRoleSelection, Assembly-CSharp
+        m_MethodName: GoToGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
