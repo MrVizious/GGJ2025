@@ -1,7 +1,10 @@
 using ExtensionMethods;
+using PrimeTween;
 using Sirenix.OdinInspector;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -20,16 +23,15 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveValue;
     public float moveSpeed = 20f;
     public float dashSpeed = 10f;
-    private float size = 1f;
-    private float growthRate = 0.01f;
+    public float dashCooldown = 2f;
     private Vector3 originalScale;
-    public GameObject deathEffect;
-    public GameObject dashEffect;
+    public VisualEffect deathEffect;
+    public VisualEffect dashEffect;
 
     private void Start()
     {
         originalScale = transform.localScale;
-        dashEffect.SetActive(false);
+        dashEffect.enabled = false;
     }
 
     public void UpdateMoveVector(InputAction.CallbackContext inputContext)
@@ -43,10 +45,6 @@ public class PlayerMovement : MonoBehaviour
         Move();
     }
 
-    private void FixedUpdate()
-    {
-        if (size < 1f) { Grow(); }
-    }
 
     private void Move()
     {
@@ -57,30 +55,27 @@ public class PlayerMovement : MonoBehaviour
         // transform.position -= moveSpeed * Time.deltaTime * Vector3.right * Mathf.Clamp(moveValue.x, -1f, 1f);
     }
 
-    private void Grow()
-    {
-        size += growthRate;
-        transform.localScale = size * originalScale;
-        if (size > 1) { size = 1; dashEffect.SetActive(false);}
-    }
 
     public void Dash(InputAction.CallbackContext inputContext)
     {
-        if (inputContext.phase == InputActionPhase.Performed && size == 1)
+        if (inputContext.phase == InputActionPhase.Performed && transform.localScale.magnitude >= originalScale.magnitude)
         {
             transform.position -= moveValue * dashSpeed;
             // transform.position -= dashSpeed * Vector3.forward * Mathf.Clamp(moveValue.y, -1f, 1f);
             // transform.position -= dashSpeed * Vector3.right * Mathf.Clamp(moveValue.x, -1f, 1f);
-            size = 0.5f;
-            dashEffect.SetActive(true);
+            dashEffect.enabled = true;
+            dashEffect.Play();
+            Tween.CompleteAll(transform);
+            transform.localScale = originalScale * 0.5f;
+            Tween.Scale(transform, originalScale, dashCooldown);
         }
     }
 
     [Button]
     public async void Damage()
     {
-        Instantiate(deathEffect, transform.position, transform.rotation);
+        GameObject newDeathEffectGO = Instantiate(deathEffect, transform.position, transform.rotation).gameObject;
+        Destroy(newDeathEffectGO, 1f);
         (await GameController.GetInstance()).RespawnPlayer(this);
     }
-
 }

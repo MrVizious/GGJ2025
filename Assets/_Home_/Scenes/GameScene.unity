@@ -158,7 +158,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   playerSpawnTransform: {fileID: 994769794}
-  playerPrefab: {fileID: 1029521328162627093, guid: b3b4d5d3145b2db40a8f7f5ebac9b375, type: 3}
+  playerPrefab: {fileID: 3901129110302852622, guid: e54f94703a170ae47bb349367e449f1d, type: 3}
 --- !u!4 &85846754
 Transform:
   m_ObjectHideFlags: 0
@@ -995,6 +995,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 20
   dashSpeed: 10
+  deathEffect: {fileID: 0}
+  dashEffect: {fileID: 0}
 --- !u!114 &1953124300
 MonoBehaviour:
   m_ObjectHideFlags: 0
