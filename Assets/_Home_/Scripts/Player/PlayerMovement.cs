@@ -28,13 +28,13 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed = 10f;
     public float dashCooldown = 2f;
     private Vector3 originalScale;
-    public VisualEffect deathEffect;
+    public GameObject deathEffect;
     public VisualEffect dashEffect;
 
     private void Start()
     {
         originalScale = transform.localScale;
-        dashEffect.SetActive(false);
+        dashEffect.enabled = false;
         originalSpeed = moveSpeed;
     }
 
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
     [Button]
     public async void Damage()
     {
-        GameObject newDeathEffectGO = Instantiate(deathEffect, transform.position, transform.rotation).gameObject;
+        GameObject newDeathEffectGO = Instantiate(deathEffect, transform.position, transform.rotation);
         Destroy(newDeathEffectGO, 1f);
         (await GameController.GetInstance()).RespawnPlayer(this);
         ShakeCamera();

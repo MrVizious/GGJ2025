@@ -14,6 +14,10 @@ public class PlayerInputHolder : MonoBehaviour
             if (_playerInput == null) TryGetComponent<PlayerInput>(out _playerInput);
             return _playerInput;
         }
+        set
+        {
+            _playerInput = value;
+        }
     }
     public EventfulStruct<PlayerRole> playerRole = new EventfulStruct<PlayerRole>(PlayerRole.None);
     private void Awake()

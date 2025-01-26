@@ -12,6 +12,7 @@ public class MultiplayerRoleSelection : MonoBehaviour
 
     private async void Start()
     {
+        (await MultiplayerController.GetInstance()).DisconnectAllPlayers();
         (await MultiplayerController.GetInstance()).onPlayerJoined.AddListener(PlayerJoined);
         (await MultiplayerController.GetInstance()).onPlayerLeft.AddListener(PlayerLeft);
     }

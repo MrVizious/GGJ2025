@@ -26,13 +26,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2280614283608422756}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0.7071068, z: -0, w: 0}
+  m_LocalRotation: {x: 0.70607066, y: -0.7060706, z: -0.038265713, w: -0.038265705}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 349.99997, y: 349.99997, z: 350.00003}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3873961794331711157}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 270}
+  m_LocalEulerAnglesHint: {x: -6.204, y: 180, z: 270}
 --- !u!33 &2540687295281245307
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7665604538129192514}
   - component: {fileID: 3901129110302852622}
   - component: {fileID: 6744817652144998428}
+  - component: {fileID: -875669255516494410}
   m_Layer: 0
   m_Name: PlayerBubble
   m_TagString: Player
@@ -306,7 +307,7 @@ MonoBehaviour:
   moveSpeed: 10000
   dashSpeed: 10
   dashCooldown: 2
-  deathEffect: {fileID: 185183168099830558, guid: cca3a2b6b29849a4a99803d5fa5b1a58, type: 3}
+  deathEffect: {fileID: 2831485186981069301, guid: cca3a2b6b29849a4a99803d5fa5b1a58, type: 3}
   dashEffect: {fileID: 7989248687406681617}
 --- !u!54 &6744817652144998428
 Rigidbody:
@@ -335,6 +336,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-875669255516494410
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799303326773703105}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6162946805021110992
 GameObject:
   m_ObjectHideFlags: 0
