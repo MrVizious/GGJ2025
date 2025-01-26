@@ -66,7 +66,7 @@ public class GameController : Singleton<GameController>
     {
         PreparePlayerInputs();
         lives = CalculatePlayers() * 3;
-        timer.beginTimer(5);
+        timer.beginTimer(90);
         timer.onTimerEnded.AddListener(async () => (await sceneController.GetInstance()).GoToLooseScene());
     }
 
