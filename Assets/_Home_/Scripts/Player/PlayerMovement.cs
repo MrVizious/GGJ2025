@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     private Vector3 moveValue;
+    public float cameraShakeDuration = 0.5f;
+    public float cameraShakeStrength = 3f;
     public float moveSpeed = 20f;
     public float dashSpeed = 10f;
     public float dashCooldown = 2f;
@@ -77,5 +79,12 @@ public class PlayerMovement : MonoBehaviour
         GameObject newDeathEffectGO = Instantiate(deathEffect, transform.position, transform.rotation).gameObject;
         Destroy(newDeathEffectGO, 1f);
         (await GameController.GetInstance()).RespawnPlayer(this);
+        ShakeCamera();
+    }
+
+    [Button]
+    public void ShakeCamera()
+    {
+        Tween.ShakeCamera(Camera.main, cameraShakeStrength, cameraShakeDuration);
     }
 }

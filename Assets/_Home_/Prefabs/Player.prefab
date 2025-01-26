@@ -151,5 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5474c326670f44ea61876f31b4f460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShakeDuration: 0.5
+  cameraShakeStrength: 0.5
   moveSpeed: 10000
   dashSpeed: 10
+  dashCooldown: 2
+  deathEffect: {fileID: 0}
+  dashEffect: {fileID: 0}

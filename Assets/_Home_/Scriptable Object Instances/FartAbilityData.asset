@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a98f438e3775146a80e13301555319, type: 3}
   m_Name: FartAbilityData
   m_EditorClassIdentifier: 
-  actionReference: {fileID: 0}
+  actionReference: {fileID: 6737485629808549303, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 40
   fartPrefab: {fileID: 0}

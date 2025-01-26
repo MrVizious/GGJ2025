@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a3043497ef8f134a8324aca119e9dc6, type: 3}
   m_Name: DiceAbilityData
   m_EditorClassIdentifier: 
-  actionReference: {fileID: 0}
+  actionReference: {fileID: -7159362472636078108, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 25
   dicePrefab: {fileID: 9174244043472547766, guid: a7ae1c417f170db4f8d74c316d096e5e, type: 3}

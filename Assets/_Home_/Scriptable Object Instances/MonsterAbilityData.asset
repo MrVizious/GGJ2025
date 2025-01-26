@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9926b32441f8f0b4b97c50f16ff9db34, type: 3}
   m_Name: MonsterAbilityData
   m_EditorClassIdentifier: 
-  actionReference: {fileID: 0}
+  actionReference: {fileID: -3960687984586079738, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   secondsOfCooldown: 15
   monsterPrefab: {fileID: 5652625655519925649, guid: 6437ca2dddabb3044a651b20a529ff18, type: 3}

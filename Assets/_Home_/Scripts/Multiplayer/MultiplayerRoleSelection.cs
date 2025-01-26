@@ -67,7 +67,7 @@ public class MultiplayerRoleSelection : MonoBehaviour
             {
                 if (roleState.playerInputHolder.value != null && roleState.playerInputHolder.value.playerRole == PlayerInputHolder.PlayerRole.Bubble)
                 {
-                    (await sceneController.GetInstance()).ChangeGameScene("GameScene");
+                    (await sceneController.GetInstance()).GoToGameplayScene();
                     return;
                 }
             }

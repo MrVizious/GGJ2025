@@ -280,6 +280,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f8bf1ff1-5472-414c-bacf-af0d2b27f471
     m_ActionName: 'Bubble/Dash[/XInputControllerWindows/buttonWest,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 865a559e-1ab3-4db7-bd57-1c9b79f0f8c9
+    m_ActionName: 'Boss/Monster[/XInputControllerWindows1/buttonEast,/XInputControllerWindows/buttonEast,/XInputControllerWindows2/buttonEast]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -297,6 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5474c326670f44ea61876f31b4f460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShakeDuration: 0.2
+  cameraShakeStrength: 1
   moveSpeed: 10000
   dashSpeed: 10
   dashCooldown: 2

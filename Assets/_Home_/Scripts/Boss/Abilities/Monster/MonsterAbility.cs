@@ -15,15 +15,14 @@ public class MonsterAbility : Ability
     public override async UniTask<bool> Perform(BossController bossController)
     {
         if (!await base.Perform(bossController)) return false;
-        GameObject newCheeto = Instantiate(data.monsterPrefab, bossController.abilityStartTransform.position, data.monsterPrefab.transform.rotation);
+        GameObject newCheeto = Instantiate(data.monsterPrefab, bossController.targetTransform.position, data.monsterPrefab.transform.rotation);
         Destroy(newCheeto, 7f);
         return true;
     }
     public override void ChargeAbilityUpdate(BossController bossController)
     {
         base.ChargeAbilityUpdate(bossController);
-        bossController.targetTransform.position =
-        bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
-        bossController.targetTransform.position = Vector3.right * targetMoveSpeed * Time.deltaTime;
+        bossController.targetTransform.position = bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
+        bossController.targetTransform.position += Vector3.right * targetMoveSpeed * Time.deltaTime;
     }
 }

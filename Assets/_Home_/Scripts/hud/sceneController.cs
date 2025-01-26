@@ -2,7 +2,7 @@ using DesignPatterns;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sceneController : Singleton<sceneController> 
+public class sceneController : Singleton<sceneController>
 {
     protected override bool keepOldestInstance => false;
     public void ChangeGameScene(string sceneName)
@@ -20,12 +20,7 @@ public class sceneController : Singleton<sceneController>
         ChangeGameScene("PlayerSelector");
     }
 
-    public void GoToCensonredScene()
-    {
-        ChangeGameScene("GameplayScene");
-    }
-
-    public void GoToUncensonredScene()
+    public void GoToGameplayScene()
     {
         ChangeGameScene("GameplayScene");
     }
