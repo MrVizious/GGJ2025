@@ -1,4 +1,5 @@
 using ExtensionMethods;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody _rb;
-    private Rigidbody rb
+    public Rigidbody rb
     {
         get
         {
@@ -70,4 +71,11 @@ public class PlayerMovement : MonoBehaviour
             size = 0.5f;
         }
     }
+
+    [Button]
+    public async void Damage()
+    {
+        (await GameController.GetInstance()).RespawnPlayer(this);
+    }
+
 }
