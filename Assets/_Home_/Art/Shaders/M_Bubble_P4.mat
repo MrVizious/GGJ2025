@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-2439625443801661558
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Bubble_P4
+  m_Shader: {fileID: -6465566751694194690, guid: 7a16f1999d3d2a4449a187c83ba3f50c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Face_Texture:
+        m_Texture: {fileID: 2800000, guid: 8d3af08281df62d49bfd72d246864914, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_153f327d26f04cbc891bdd55a34324e6_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 8f88e3ff35aabbf40852f8576034ac0c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ba848d701dab4fc0a32f0f27d2dc3353_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 4820d526fbf857443906d0a6dbf89792, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_df2c5ac2aa7640109d277a04965b7183_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: e434a2c524429464daf10be6ecbc3205, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_7585046aab1a40278dac343f831a55c0_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 4c06e847a3dc08849b7eeb913366ee30, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Bubble_Color_Noise_Tile: 0.05
+    - _Emmisive_Contrast_Intensity: 1.84
+    - _Emmisive_Fresnel_Contrast: 1
+    - _Emmisive_Fresnel_Power: 1.4
+    - _Emmisive_Intensity: 0.82
+    - _Face_Emmisive_Intensity: 18.5
+    - _Noise_Position_Multiplier: 0.003
+    - _Noise_Time_Multiplier: 0.5
+    - _Normal_Contrast_Intensity: 0.35
+    - _Opacity_Contrast_Intensity: 1
+    - _Opacity_Fresnel_Power: 5.66
+    - _Outline_Contrast_Intensity: 4
+    - _Outline_Fresnel_Power: 1.47
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Scroll_Noise_Tile: 1
+    - _Time_Position_Multiplier: 0.01
+    m_Colors:
+    - _Face_Color: {r: 0, g: 1, b: 0.11764717, a: 0}
+    - _Face_Offset: {r: 1, g: 1, b: 0, a: 0}
+    - _Face_Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _Player_Color: {r: 0.41759014, g: 0, b: 1, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
