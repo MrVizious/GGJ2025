@@ -18,7 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     private Vector3 moveValue;
-    public float moveSpeed = 20f;
+    public float moveSpeed = 10000f;
+    private float originalSpeed;
     public float dashSpeed = 10f;
     private float size = 1f;
     private float growthRate = 0.01f;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
         originalScale = transform.localScale;
         dashEffect.SetActive(false);
+        originalSpeed = moveSpeed;
     }
 
     public void UpdateMoveVector(InputAction.CallbackContext inputContext)
@@ -81,6 +83,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Instantiate(deathEffect, transform.position, transform.rotation);
         (await GameController.GetInstance()).RespawnPlayer(this);
+    }
+
+    public async void SlowOn()
+    {
+        moveSpeed = originalSpeed * 0.1f;
+    }
+
+    public async void SlowOff()
+    {
+        moveSpeed = originalSpeed;
     }
 
 }
