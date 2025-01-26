@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Bubble
+  m_Name: M_Bubble_P2
   m_Shader: {fileID: -6465566751694194690, guid: 7a16f1999d3d2a4449a187c83ba3f50c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Face_Texture:
-        m_Texture: {fileID: 2800000, guid: e1df1428c7d60414eae4ecc201b8000f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3deb75fd9141bc84e9bef7f6238f85f9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_153f327d26f04cbc891bdd55a34324e6_Texture_1_Texture2D:
@@ -92,6 +92,6 @@ Material:
     - _Face_Color: {r: 0, g: 1, b: 0.11764717, a: 0}
     - _Face_Offset: {r: 1, g: 1, b: 0, a: 0}
     - _Face_Tiling: {r: 1, g: 1, b: 0, a: 0}
-    - _Player_Color: {r: 1, g: 0, b: 0.5961108, a: 0}
+    - _Player_Color: {r: 0.07742083, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
