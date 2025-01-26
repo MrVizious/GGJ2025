@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: KunaiAbilityData
   m_EditorClassIdentifier: 
   actionReference: {fileID: -9165289804736320397, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  secondsOfCooldown: 5
-  projectileSpeed: 3
+  secondsOfCooldown: 4
+  kunaiPrefab: {fileID: 8660360854681342982, guid: a45ec54d898e30340bdf116373659dd9, type: 3}

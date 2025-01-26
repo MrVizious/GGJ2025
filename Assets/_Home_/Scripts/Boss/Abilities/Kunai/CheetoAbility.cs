@@ -15,15 +15,16 @@ public class CheetoAbility : Ability
     public override async UniTask<bool> Perform(BossController bossController)
     {
         if (!await base.Perform(bossController)) return false;
-        // Cheeto newCheeto = (await VarietyPool.GetInstance()).Get<Cheeto>();
-        // newCheeto.transform.position = bossController.abilityStartTransform.position;
+        GameObject newCheeto = Instantiate(data.cheetoPrefab, bossController.abilityStartTransform.position, data.cheetoPrefab.transform.rotation);
+        Destroy(newCheeto, 7f);
         return true;
     }
-
-    public override void ChargeAbilityUpdate(BossController bossController)
-    {
-        base.ChargeAbilityUpdate(bossController);
-        bossController.targetTransform.position = bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
-        bossController.targetTransform.position -= Vector3.right * targetMoveSpeed * Time.deltaTime;
-    }
+    /*
+        public override void ChargeAbilityUpdate(BossController bossController)
+        {
+            base.ChargeAbilityUpdate(bossController);
+            bossController.targetTransform.position = bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
+            bossController.targetTransform.position -= Vector3.right * targetMoveSpeed * Time.deltaTime;
+        }
+        */
 }
