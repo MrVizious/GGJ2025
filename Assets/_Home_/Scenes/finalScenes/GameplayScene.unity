@@ -1193,6 +1193,18 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4285490646
       objectReference: {fileID: 0}
+    - target: {fileID: 2992659314587959577, guid: 3a29e5d5886c87844a5aa2d4202d8726, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992659314587959577, guid: 3a29e5d5886c87844a5aa2d4202d8726, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992659314587959577, guid: 3a29e5d5886c87844a5aa2d4202d8726, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 3224043457994009957, guid: 3a29e5d5886c87844a5aa2d4202d8726, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.761451
