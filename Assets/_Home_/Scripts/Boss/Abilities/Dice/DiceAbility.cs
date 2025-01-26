@@ -3,27 +3,26 @@ using ExtensionMethods;
 using UnityEngine;
 using UtilityMethods;
 
-public class CheetoAbility : Ability
+public class DiceAbility : Ability
 {
-    public CheetoAbilityData data;
+    public DiceAbilityData data;
     public float targetMoveSpeed = 25f;
     [HideInInspector]
     public override AbilityData abilityData => data;
 
-    public override bool hasChargeMethod => false;
+    public override bool hasChargeMethod => true;
 
     public override async UniTask<bool> Perform(BossController bossController)
     {
         if (!await base.Perform(bossController)) return false;
-        // Cheeto newCheeto = (await VarietyPool.GetInstance()).Get<Cheeto>();
-        // newCheeto.transform.position = bossController.abilityStartTransform.position;
+        GameObject newCheeto = Instantiate(data.dicePrefab, bossController.targetTransform.position, data.dicePrefab.transform.rotation);
+        Destroy(newCheeto, 7f);
         return true;
     }
-
     public override void ChargeAbilityUpdate(BossController bossController)
     {
         base.ChargeAbilityUpdate(bossController);
         bossController.targetTransform.position = bossController.targetTransform.position.WithZ(bossController.abilityStartTransform.position.z);
-        bossController.targetTransform.position -= Vector3.right * targetMoveSpeed * Time.deltaTime;
+        bossController.targetTransform.position += Vector3.right * targetMoveSpeed * Time.deltaTime;
     }
 }

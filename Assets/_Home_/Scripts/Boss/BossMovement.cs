@@ -17,7 +17,7 @@ public class BossMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public void UpdateMoveVector(InputAction.CallbackContext inputContext)
     {
-        moveValue = inputContext.ReadValue<Vector2>();
+        moveValue = -inputContext.ReadValue<Vector2>();
     }
     private void Update()
     {

@@ -11,6 +11,19 @@ public class MultiplayerController : Singleton<MultiplayerController>
     public PlayerInputHolder[] playerInputHolders = new PlayerInputHolder[4];
     public UnityEvent<PlayerInputHolder> onPlayerJoined = new UnityEvent<PlayerInputHolder>();
     public UnityEvent<PlayerInputHolder> onPlayerLeft = new UnityEvent<PlayerInputHolder>();
+    public void DisconnectAllPlayers()
+    {
+        for (int i = 0; i < playerInputHolders.Length; i++)
+        {
+            PlayerInputHolder playerInputHolder = playerInputHolders[i];
+            if (playerInputHolder != null && playerInputHolder.playerInput != null)
+            {
+                Destroy(playerInputHolder.playerInput.gameObject);
+                playerInputHolder.playerInput = null;
+                playerInputHolders[i] = null;
+            }
+        }
+    }
     public void OnPlayerJoined(PlayerInput newPlayerInput)
     {
         for (int i = 0; i < playerInputHolders.Length; i++)
