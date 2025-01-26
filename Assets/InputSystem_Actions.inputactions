@@ -838,7 +838,7 @@
                 {
                     "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
-                    "path": "*/{Submit}",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
@@ -1039,28 +1039,26 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Monster",
+                    "type": "Button",
+                    "id": "865a559e-1ab3-4db7-bd57-1c9b79f0f8c9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "f3c5a38c-9d5b-4b31-964e-bdb39954174d",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
                     "action": "Dice",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e9ca91d7-eda6-4768-b151-7055a5fb1433",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Cheeto",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1110,12 +1108,12 @@
                 },
                 {
                     "name": "",
-                    "id": "be959637-82e3-4abb-86fd-1b2c4be1f987",
-                    "path": "<Keyboard>/p",
+                    "id": "6bdac62c-2d22-4886-8caa-7d229e4604a2",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fart",
+                    "groups": ";Gamepad",
+                    "action": "Monster",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

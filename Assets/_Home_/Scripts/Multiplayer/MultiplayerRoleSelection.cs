@@ -12,6 +12,7 @@ public class MultiplayerRoleSelection : MonoBehaviour
 
     private async void Start()
     {
+        (await MultiplayerController.GetInstance()).DisconnectAllPlayers();
         (await MultiplayerController.GetInstance()).onPlayerJoined.AddListener(PlayerJoined);
         (await MultiplayerController.GetInstance()).onPlayerLeft.AddListener(PlayerLeft);
     }
@@ -67,7 +68,7 @@ public class MultiplayerRoleSelection : MonoBehaviour
             {
                 if (roleState.playerInputHolder.value != null && roleState.playerInputHolder.value.playerRole == PlayerInputHolder.PlayerRole.Bubble)
                 {
-                    (await sceneController.GetInstance()).ChangeGameScene("GameScene");
+                    (await sceneController.GetInstance()).GoToGameplayScene();
                     return;
                 }
             }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CheetoAbilityData
   m_EditorClassIdentifier: 
   actionReference: {fileID: -2968640334631391785, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  secondsOfCooldown: 3
-  projectileSpeed: 3
+  secondsOfCooldown: 2
+  cheetoPrefab: {fileID: 9071955094402162850, guid: 13300f9184723794bbb5dc0a2286c724, type: 3}

@@ -35,4 +35,9 @@ public class BossController : MonoBehaviour
             _abilityActions.Add(ability.abilityData.actionReference.action, ability);
         }
     }
+
+    private void Start()
+    {
+        FillInputActionAbilityDictionary();
+    }
 }

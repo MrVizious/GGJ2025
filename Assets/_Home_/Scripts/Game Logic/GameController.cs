@@ -102,5 +102,7 @@ public class GameController : Singleton<GameController>
         bossActionMap["Dice"].canceled += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
         bossActionMap["Fart"].performed += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
         bossActionMap["Fart"].canceled += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
+        bossActionMap["Monster"].performed += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
+        bossActionMap["Monster"].canceled += bossController.GetComponent<BossStateMachine>().ProcessInputEvent;
     }
 }

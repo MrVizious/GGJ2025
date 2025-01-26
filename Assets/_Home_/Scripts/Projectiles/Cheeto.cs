@@ -45,7 +45,7 @@ public class Cheeto : Poolable
         transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
         //if (transform.rotation.y > 0.99) {transform.rotation = Quaternion.Euler(transform.rotation.x, 180, transform.rotation.z);}
         if (direction == 1 && transform.localRotation.y > 0.99) {transform.localRotation = Quaternion.Euler(transform.localRotation.x, 180, transform.localRotation.z);}
-        if (canTurn && direction == -1 && transform.localRotation.y < -0.99) {Debug.Log(transform.rotation.y);transform.localRotation = Quaternion.Euler(transform.localRotation.x, -180, transform.localRotation.z);}
+        if (canTurn && direction == -1 && transform.localRotation.y < -0.99) {transform.localRotation = Quaternion.Euler(transform.localRotation.x, -180, transform.localRotation.z);}
         //else {transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);}
     }
 }
