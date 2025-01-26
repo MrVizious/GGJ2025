@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class timerController : MonoBehaviour
 {
-    float timer = 0.0f;
+    float timer = -1.0f;
     public UnityEvent onTimerEnded = new UnityEvent();
 
     public void beginTimer(float seconds){
