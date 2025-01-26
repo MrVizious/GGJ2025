@@ -19,6 +19,7 @@ public abstract class Ability : MonoBehaviour
         set
         {
             _secondsSinceActivation = value;
+            onCooldownPercentageChanged.Invoke(cooldownCompletionPercentage);
             if (_secondsSinceActivation >= abilityData.secondsOfCooldown)
             {
                 onCooldownEnded.Invoke();
@@ -28,6 +29,7 @@ public abstract class Ability : MonoBehaviour
     }
     public UltEvent onCooldownEnded = new UltEvent();
     public float cooldownCompletionPercentage => Mathf.Clamp01(secondsSinceActivation / abilityData.secondsOfCooldown);
+    public UltEvent<float> onCooldownPercentageChanged = new UltEvent<float>();
 
     [Button(DrawResult = false)]
     public virtual async UniTask<bool> Perform(BossController bossController)

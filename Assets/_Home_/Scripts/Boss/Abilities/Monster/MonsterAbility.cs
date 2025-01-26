@@ -10,15 +10,16 @@ public class MonsterAbility : Ability
     [HideInInspector]
     public override AbilityData abilityData => data;
 
-    public override bool hasChargeMethod => false;
+    public override bool hasChargeMethod => true;
 
     public override async UniTask<bool> Perform(BossController bossController)
     {
         if (!await base.Perform(bossController)) return false;
-        GameObject newCheeto = Instantiate(data.monsterPrefab, bossController.targetTransform.position, data.monsterPrefab.transform.rotation);
-        Destroy(newCheeto, 7f);
+        GameObject newMonster = Instantiate(data.monsterPrefab, bossController.targetTransform.position, data.monsterPrefab.transform.rotation);
+        Destroy(newMonster, 7f);
         return true;
     }
+
     public override void ChargeAbilityUpdate(BossController bossController)
     {
         base.ChargeAbilityUpdate(bossController);
