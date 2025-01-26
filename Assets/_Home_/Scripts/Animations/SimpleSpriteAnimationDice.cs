@@ -14,6 +14,8 @@ public class SimpleSpriteAnimationDice : MonoBehaviour
     public List<Sprite> faceSprites;
     private SpriteRenderer _image;
     private int _currentSpriteIndex = 0;
+    public GameObject mosca;
+    private int spawnVariance = 8;
 
     private void Start()
     {
@@ -38,5 +40,17 @@ public class SimpleSpriteAnimationDice : MonoBehaviour
     {
         int num_face = (int)UnityEngine.Random.Range(1, 6);
         _image.sprite = faceSprites[num_face];
+        Invoke("_destroy", 1f);
+        for (int i = 0; i <= num_face; i++)
+        {
+            Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-spawnVariance, spawnVariance), 1f,
+                transform.position.z + UnityEngine.Random.Range(-spawnVariance, spawnVariance));
+            Instantiate(mosca, spawnPosition, transform.rotation);
+        }
+    }
+
+    private void _destroy()
+    {
+        Destroy(gameObject);
     }
 }
