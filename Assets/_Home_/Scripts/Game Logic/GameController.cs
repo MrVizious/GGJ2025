@@ -2,14 +2,28 @@ using DesignPatterns;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using EventfulData;
+using UltEvents;
 
 public class GameController : Singleton<GameController>
 {
     protected override bool dontDestroyOnLoad => false;
     public Transform playerSpawnTransform;
     private BossController _bossController;
-    public sceneController sc;
-    public EventfulStruct<int> Lives = new EventfulStruct<int>(6);
+    [SerializeField]
+    private int _lives;
+    public int lives
+    {
+        get
+        {
+            return _lives;
+        }
+        set
+        {
+            _lives = value;
+            onLivesChanged.Invoke(_lives.ToString());
+        }
+    }
+    public UltEvent<string> onLivesChanged = new UltEvent<string>();
     private BossController bossController
     {
         get
@@ -30,19 +44,33 @@ public class GameController : Singleton<GameController>
 
     public PlayerMovement playerPrefab;
 
-    public void TakeDamage()
+    public async void TakeDamage()
     {
-        Lives -= 1;
-        Debug.Log(Lives);
-        if (Lives <= 0)
+        lives -= 1;
+        if (lives <= 0)
         {
-            sc.GoToBurbujasScene();
+            (await sceneController.GetInstance()).GoToBurbujasScene();
         }
     }
 
     private void Start()
     {
         PreparePlayerInputs();
+        lives = CalculatePlayers() * 3;
+    }
+
+    private int CalculatePlayers()
+    {
+        int numberOfPlayers = 0;
+        foreach (PlayerInputHolder playerInputHolder in multiplayerController.playerInputHolders)
+        {
+            if (playerInputHolder == null) continue;
+            if (playerInputHolder.playerRole == PlayerInputHolder.PlayerRole.Bubble)
+            {
+                numberOfPlayers++;
+            }
+        }
+        return numberOfPlayers;
     }
 
     private void PreparePlayerInputs()
