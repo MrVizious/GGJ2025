@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     public abstract AbilityData abilityData { get; }
+    public abstract bool hasChargeMethod { get; }
     public bool canBeActivated = true;
     private float _secondsSinceActivation;
     public float secondsSinceActivation
@@ -32,6 +33,7 @@ public abstract class Ability : MonoBehaviour
     public virtual async UniTask<bool> Perform(BossController bossController)
     {
         if (!canBeActivated) return false;
+        Debug.Log($"Ability performed! {GetType()}", this);
         canBeActivated = false;
         secondsSinceActivation = 0;
         return true;

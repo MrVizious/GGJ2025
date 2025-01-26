@@ -19,6 +19,12 @@ public class ChargeAbilityBossState : AbilityBossState
     public override void Enter(IStateMachine<BossState> newStateMachine)
     {
         base.Enter(newStateMachine);
+        if (ability.hasChargeMethod)
+        {
+            PerformAbilityBossState nextState = (PerformAbilityBossState)stateMachine.PrepareState(typeof(PerformAbilityBossState));
+            nextState.ability = ability;
+            stateMachine.ChangeToState(nextState);
+        }
         bossController.targetTransform.position = bossController.abilityStartTransform.position;
     }
     private void Update()
