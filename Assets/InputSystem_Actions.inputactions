@@ -36,7 +36,7 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "852140f2-7766-474d-8707-702459ba45f3",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold",
                     "initialStateCheck": false
@@ -81,7 +81,7 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -1151,13 +1151,13 @@
         },
         {
             "name": "Bubble",
-            "id": "3254d87d-98fe-4142-be0b-f56fb5f10d4e",
+            "id": "5d878897-b93f-472f-98b4-5d6c81b061a2",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "8068af54-92f8-49da-b5af-4b320867c0ba",
-                    "expectedControlType": "Stick",
+                    "id": "56366efb-c91d-4923-a8c3-21759c225da2",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1165,7 +1165,7 @@
                 {
                     "name": "Dash",
                     "type": "Button",
-                    "id": "43e7c4a3-7435-45ba-a6b0-b0a8defcdb7e",
+                    "id": "f8bf1ff1-5472-414c-bacf-af0d2b27f471",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1175,33 +1175,33 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "6766c2bb-f09c-43ab-916b-99c674475474",
+                    "id": "35ac819f-6a7e-4440-bb2a-49e44d7c7e81",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ab8494a7-5130-4844-a77c-54b68303168c",
+                    "id": "a5073c19-bcad-43d1-8dce-f797166e522f",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0b38f58c-23c7-431c-a03a-7b431ef43302",
+                    "id": "904d1f0e-986c-41f4-986f-c8f897c015d1",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
